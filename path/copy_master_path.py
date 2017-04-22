@@ -1,8 +1,11 @@
-"""
+#MenuTitle: copy to all masters
+# -*- coding: utf-8 -*-
+__doc__="""
 	this script allows to copy paths stored in masters
 	to another glyphs with one click
 """
-import copy
+import PySide
+print "DUPA"
 Glyphs.clearLog()
 font = Glyphs.font
 myLayers = font.selectedLayers
