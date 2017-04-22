@@ -1,0 +1,42 @@
+
+font = Glyphs.font
+fontMaster = font.masters[0]
+descender = fontMaster.descender
+ascender = fontMaster.ascender
+
+
+
+
+for glyph in font.glyphs:
+	layer = glyph.layers[0]
+	layer.clear()
+	print layer.width
+	start = 0
+	aGS = GSNode()
+	aGS.type = GSLINE
+	aGS.position = (start-10,descender)
+	
+	bGS = GSNode()
+	bGS.type = GSLINE
+	bGS.position = (start-10,ascender)
+	
+	cGS = GSNode()
+	cGS.type = GSLINE
+	cGS.position = (start + layer.width+10,ascender)
+	
+	dGS = GSNode()
+	dGS.type = GSLINE
+	dGS.position = (start + layer.width+10,descender)
+	
+	pathGS = GSPath()
+	pathGS.nodes.append(aGS)
+	pathGS.nodes.append(bGS)
+	pathGS.nodes.append(cGS)
+	pathGS.nodes.append(dGS)
+	pathGS.closed = True
+	paths = layer.paths
+	
+
+	paths.append(pathGS)
+
+
